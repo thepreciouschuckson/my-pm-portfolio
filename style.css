@@ -176,3 +176,27 @@ footer p {
     margin: 0;
     font-size: 0.9rem;
 }
+
+/* --- SECONDARY BUTTONS (Contact Section) --- */
+.contact-buttons {
+    display: flex;
+    gap: 1rem; /* Creates even spacing between the buttons */
+    flex-wrap: wrap; /* Ensures they stack neatly on small phone screens */
+    margin-top: 1.5rem;
+}
+
+.secondary-button {
+    background-color: #EDF2F7; /* A very light, subtle gray-blue */
+    color: var(--text-color); /* Matches your sub-text perfectly */
+    padding: 0.5rem 1rem; /* Smaller frame size than your primary buttons */
+    text-decoration: none; /* Removes the tacky underline */
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.95rem; /* Slightly smaller text */
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.secondary-button:hover {
+    background-color: #E2E8F0; /* Slightly darker on hover for a tactile feel */
+    transform: translateY(-2px); /* Keeps the same subtle "lift" as your other buttons */
+}
