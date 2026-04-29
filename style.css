@@ -200,3 +200,25 @@ footer p {
     background-color: #E2E8F0; /* Slightly darker on hover for a tactile feel */
     transform: translateY(-2px); /* Keeps the same subtle "lift" as your other buttons */
 }
+
+.blog-section {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.blog-card {
+    background: #f9f9f9; /* Lighter background to distinguish from main projects */
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.pm-takeaway {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin: 15px 0;
+    padding: 10px;
+    background: #eef4ff;
+    border-left: 4px solid var(--primary-color);
+}
