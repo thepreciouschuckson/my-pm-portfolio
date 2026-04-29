@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brassmoney UX Research | PM Portfolio</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" style="color: var(--accent-color);">Projects</a></li>
+                <li><a href="learning.html">Learning</a></li>
+                <li><a href="resume.html">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <a href="projects.html" class="secondary-button" style="margin-bottom: 2.5rem;">← Back to Projects</a>
+
+        <h1>UX Research & Feature Improvement</h1>
+        <p style="font-size: 1.2rem; color: var(--accent-color); margin-bottom: 2rem;">Brassmoney: Target Savings Flexible Deduction</p>
+        
+        <hr>
+
+        <section>
+            <h2>1. Overview & Objective</h2>
+            <p><strong>Product Context:</strong> Brassmoney is a fintech application that helps users manage finances and save towards specific goals (rent, travel, emergency funds). The Target Savings feature allows users to automate these savings based on defined rules.</p>
+            <div style="background: var(--white); padding: 1.5rem; border-left: 4px solid var(--accent-color); box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-radius: 8px; margin-top: 1rem;">
+                <p style="margin-bottom: 0;"><strong>Strategic Objective:</strong> Improve flexibility in the Target Savings feature by allowing users to choose their preferred deduction time, with the goal of <strong>reducing drop-offs</strong> during goal setup and <strong>increasing completion rates</strong>.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. The Problem Space</h2>
+            <p>Savings features play a key role in user retention for fintech products. If users fail to complete the setup, they never reach the core value of the feature. Currently, users are restricted to a fixed deduction time of 8:30 AM. This creates severe friction for users whose cash flow does not align with that specific time.</p>
+            
+            <h3 style="font-size: 1.1rem; margin-top: 1.5rem;">Current User Flow & Friction Point:</h3>
+            <div style="background: #FFF5F5; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #F56565;">
+                <ol style="margin-bottom: 0; color: var(--text-color);">
+                    <li>User selects target savings.</li>
+                    <li>User sets amount and frequency.</li>
+                    <li>User sees fixed time (8:30 AM) and feels a lack of control.</li>
+                    <li><strong>FRICTION:</strong> User exits setup without completing the goal.</li>
+                </ol>
+            </div>
+            <p style="margin-top: 1rem; font-style: italic; color: #718096;"><strong>Problem Statement:</strong> Fixed deduction time reduces user control. Users whose cash flow does not align with 8:30 AM fail to complete setup, leading to drop-offs and fewer completed savings goals.</p>
+        </section>
+
+        <section>
+            <h2>3. Proposed Solution & User Stories</h2>
+            <p>Introduce a time-picker during goal setup, allowing users to select their preferred deduction time.</p>
+            <ul>
+                <li><strong>As a user,</strong> I want to choose the time my savings are deducted so it aligns with when funds are available.</li>
+                <li><strong>As a user,</strong> I want to edit the default time so I feel in control of my savings.</li>
+                <li><strong>As a user,</strong> I want the app to remember my preferred time so I do not reset it each time.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Scope Management</h2>
+            <div style="display: flex; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 250px; background: #eef4ff; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+                    <h5 style="color: var(--primary-color); margin-bottom: 0.8rem;">✅ In Scope</h5>
+                    <ul style="margin-left: 1.2rem; font-size: 0.95rem; color: var(--text-color); margin-bottom: 0;">
+                        <li>UI update to savings setup screen (Time Picker).</li>
+                        <li>Backend scheduling logic for variable times.</li>
+                        <li>Notification updates based on the newly selected time.</li>
+                    </ul>
+                </div>
+
+                <div style="flex: 1; min-width: 250px; background: #F7FAFC; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #A0AEC0;">
+                    <h5 style="color: var(--primary-color); margin-bottom: 0.8rem;">🚫 Out of Scope</h5>
+                    <ul style="margin-left: 1.2rem; font-size: 0.95rem; color: var(--text-color); margin-bottom: 0;">
+                        <li>Changing overall savings frequency rules.</li>
+                        <li>Predictive AI time recommendations based on spending habits.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Metrics, Risks & Next Steps</h2>
+            
+            <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="font-size: 1.2rem;">Success Metrics</h3>
+                    <ul>
+                        <li>Reduction in drop-off rate during goal setup.</li>
+                        <li>Increase in completed savings setups.</li>
+                        <li>Retention rate of users who create savings goals.</li>
+                    </ul>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="font-size: 1.2rem;">Trade-offs & Risks</h3>
+                    <ul>
+                        <li>Increased backend complexity due to flexible CRON scheduling.</li>
+                        <li>Risk of failed deductions if users select poor timing.</li>
+                        <li>Need for balance checks before execution.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.2rem; margin-top: 1.5rem;">Next Steps (Validation)</h3>
+            <p>Before writing a line of code, I would validate this problem with user interviews, analyze the current drop-off data in Mixpanel/Amplitude, and run an A/B test comparing fixed vs. flexible timing to monitor the true impact on completion and retention.</p>
+        </section>
+
+        <div class="pm-takeaway">
+            <strong>PM Reflection:</strong> Small UX constraints can lead to significant user drop-offs. Product decisions must constantly balance user autonomy (flexibility) with system stability (backend complexity and risk of failed transactions).
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Product Management Portfolio. Built with Product Thinking.</p>
+        <script>
+            document.getElementById("currentYear").textContent = new Date().getFullYear();
+        </script>
+    </footer>
+
+</body>
+</html>
