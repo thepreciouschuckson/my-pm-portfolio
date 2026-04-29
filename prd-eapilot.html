@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EAPilot PRD | PM Portfolio</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" style="color: var(--accent-color);">Projects</a></li>
+                <li><a href="learning.html">Learning</a></li>
+                <li><a href="resume.html">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <a href="projects.html" class="secondary-button" style="margin-bottom: 2.5rem;">← Back to Projects</a>
+
+        <h1>Product Requirements Document: EAPilot</h1>
+        <p style="font-size: 1.2rem; color: var(--accent-color); margin-bottom: 2rem;">AI-Driven Scheduling Tool for Executive Assistants</p>
+        
+        <hr>
+
+        <section>
+            <h2>1. Overview & Problem Statement</h2>
+            <p><strong>Problem:</strong> Executive Assistants (EAs) lose 2–4 hours weekly on "reactive rescheduling". The lack of automated buffer zones and timezone detection leads to executive burnout and high manual overhead to fix the ripple effect of late-running meetings.</p>
+            <p><strong>Target User:</strong> Executive Assistants managing 3+ complex executive schedules.</p>
+        </section>
+
+        <section>
+            <h2>2. Goals & Success Metrics</h2>
+            <div style="background: var(--white); padding: 1.5rem; border-left: 4px solid var(--accent-color); box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-radius: 8px;">
+                <p><strong>Goal:</strong> Streamline complex scheduling to reduce manual intervention.</p>
+                <p style="margin-bottom: 0;"><strong>Primary Metric:</strong> Reduce time spent on meeting scheduling by 50%.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. User Stories & Acceptance Criteria</h2>
+            
+            <article style="margin-bottom: 1.5rem;">
+                <h3 style="font-size: 1.3rem;">Story 1: Automated Buffer Management</h3>
+                <p><strong>User Story:</strong> As an EA, I want the system to automatically flag meetings scheduled without a 10-minute buffer, so that I can ensure my executive has time to transition between contexts.</p>
+                <p style="margin-bottom: 0.5rem; color: var(--primary-color);"><strong>Acceptance Criteria:</strong></p>
+                <ul style="margin-bottom: 0;">
+                    <li>The system must block the save action and trigger an error modal if no buffer (min. 10 mins) is detected.</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3 style="font-size: 1.3rem;">Story 2: Timezone Discrepancy Validation</h3>
+                <p><strong>User Story:</strong> As an EA, I want the system to flag timezone discrepancies so that important meetings aren't missed negatively impacting business timelines.</p>
+                <p style="margin-bottom: 0.5rem; color: var(--primary-color);"><strong>Acceptance Criteria:</strong></p>
+                <ul style="margin-bottom: 0;">
+                    <li>The system must provide a persistent, high-priority visual alert requiring explicit "Acknowledge" or "Dismiss" action from the user.</li>
+                    <li>The system must display a comparison grid where local times falling outside "Preferred Working Hours" are highlighted in amber or red.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <h2>4. Technical Constraints</h2>
+            <ul>
+                <li><strong>Data Validation:</strong> Suggestions must be cross-referenced against the internal user profile (working hours), external calendar APIs (OOO/busy blocks), and a regional holiday API.</li>
+                <li><strong>Latency:</strong> AI suggestions must be generated in under 3 seconds to maintain a smooth user experience.</li>
+                <li><strong>Privacy:</strong> Meeting descriptions must not be stored in the AI training model to ensure executive confidentiality.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. UI/UX Requirements</h2>
+            <ul>
+                <li><strong>Primary Interface:</strong> Initially launches as a side panel to the right of the main calendar.</li>
+                <li><strong>Expansion:</strong> Includes a "Full Screen" icon to transition into a dedicated workspace for complex conflict resolution.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>6. Prioritization & Scope Management</h2>
+            <p>To hit launch deadlines and prevent scope creep, the following features were aggressively filtered based on their RICE scoring and engineering effort.</p>
+            
+            <div style="display: flex; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 250px; background: #eef4ff; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+                    <h5 style="color: var(--primary-color); margin-bottom: 0.8rem;">✅ In Scope (V1 MVP)</h5>
+                    <ul style="margin-left: 1.2rem; font-size: 0.95rem; color: var(--text-color); margin-bottom: 0;">
+                        <li>Automated timezone detection.</li>
+                        <li>Google Calendar 2-way sync.</li>
+                        <li>Basic conflict resolution logic.</li>
+                        <li>Side-panel integration.</li>
+                    </ul>
+                </div>
+
+                <div style="flex: 1; min-width: 250px; background: #FFF5F5; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #F56565;">
+                    <h5 style="color: var(--primary-color); margin-bottom: 0.8rem;">🚫 Out of Scope (V2 Features)</h5>
+                    <ul style="margin-left: 1.2rem; font-size: 0.95rem; color: var(--text-color); margin-bottom: 0;">
+                        <li><strong>External Notifications:</strong> No email or SMS alerts; strictly in-app to lower dev effort.</li>
+                        <li><strong>Travel Integration:</strong> Physical appointment travel times pushed to V2 due to high API complexity.</li>
+                        <li><strong>"Golden Window" AI Suggestions:</strong> High effort, low initial impact.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Product Management Portfolio. Built with Product Thinking.</p>
+        <script>
+            document.getElementById("currentYear").textContent = new Date().getFullYear();
+        </script>
+    </footer>
+
+</body>
+</html>
