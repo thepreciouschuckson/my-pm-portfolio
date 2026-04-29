@@ -116,6 +116,20 @@ p {
     .cta-buttons a {
         margin: 0.5rem; /* Better button spacing on mobile */
     }
+
+    /* NEW: Mobile Navigation Fixes */
+    nav ul {
+        padding: 1rem 0; /* Reduces the bulk padding around the nav */
+        flex-wrap: wrap; /* Prevents text from forcing its way off the screen */
+    }
+
+    nav ul li {
+        margin: 0 0.6rem; /* Shrinks the gap between words */
+    }
+
+    nav ul li a {
+        font-size: 0.9rem; /* Shrinks the font size a tiny bit for mobile */
+    }
 }
 
 /* --- BUTTONS & CALLS TO ACTION --- */
