@@ -120,7 +120,7 @@ p {
 
     /* NEW: Mobile Navigation Fixes */
     nav ul {
-        padding: 1.5rem 0 0.8rem 0; /* Explicitly nudges the mobile links down */
+        padding: 2.2rem 0 0.5rem 0; /* Increased top padding to push it further down */
         flex-wrap: wrap; 
     }
 
